@@ -1,3 +1,4 @@
 discord==2.3.2
 discord.py==2.3.2
 requests==2.26.0
+dotenv==0.0.5
