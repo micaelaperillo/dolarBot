@@ -1,8 +1,10 @@
 import os
 import requests
 import discord
-from datetime import datetime
-import pytz
+from datetime import datetime 
+from dotenv import load_dotenv
+
+load_dotenv()
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -39,5 +41,5 @@ Simplemente escribe `!dolares` para obtener el precio de 7 tipos de dólares en 
     msg += f"🕝 Ultima actualizacion: {fecha_ultima_actualizacion}"
     await message.channel.send(msg)
 
-token = os.getenv("TOKEN") or ""
+token = os.getenv(os.getenv(TOKEN)) or ""
 client.run(token)
