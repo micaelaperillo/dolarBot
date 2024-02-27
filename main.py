@@ -28,10 +28,9 @@ Simplemente escribe `!dolares` para obtener el precio de 7 tipos de dólares en 
     dollars = requests.get("https://dolarapi.com/v1/dolares").json()
     msg = "💰 *Cotizacion del Dolar* 💰\n"
     for dolar in dollars:
-      # Format: USD {Nombre} - Compra: {compra} - Venta: {venta}
+      # Format: USD {Nombre} - Compra: ${compra} - Venta: ${venta}
       msg += f"- USD {dolar['nombre']} - Compra: ${dolar['compra']} - Venta: ${dolar['venta']}\n"
 
-    # Convertir la cadena a un objeto datetime
     fecha_ultima_actualizacion = dollars[0]['fechaActualizacion']
     fecha_ultima_actualizacion = datetime.fromisoformat(
         fecha_ultima_actualizacion.replace("Z", "+00:00"))
